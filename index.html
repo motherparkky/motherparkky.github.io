@@ -101,7 +101,7 @@ Client (Browser) ←→ HTTP/REST ←→ ShapeController (Spring Boot)
                           (SAT, Convex Hull,
                            Union-Find)
   </pre>
-  <img src="assets/imagges/architecture.png" alt="시스템 아키텍처 다이어그램">
+  <img src="assets/images/architecture.png" alt="시스템 아키텍처 다이어그램">
 </section>
 
 <section id="tech-analysis">
@@ -157,6 +157,8 @@ Client (Browser) ←→ HTTP/REST ←→ ShapeController (Spring Boot)
     <li>ShapeService: 도형 생성, Bounding Box 및 SAT 충돌 감지, Union-Find 그룹화</li>
     <li>AlgorithmUtils: separatingAxisTest(), computeConvexHull(), find(), union()</li>
     <li>ShapeVisualizer (JS): generateShapes(), drawShapesSVG(), updateSvgSize(), toggleJsonModal(), updateStats()</li>
+    <li>Typography: Google Fonts 'Inter' 및 애플 시스템 폰트 적용하여 깔끔한 글꼴 스타일 구현</li>
+    <li>Animation: 부드러운 애니메이션 효과와 호버 구현</li>
   </ul>
   <h3>JSON 데이터 구조</h3>
   <pre><code>{
@@ -184,13 +186,12 @@ Client (Browser) ←→ HTTP/REST ←→ ShapeController (Spring Boot)
   <h3>테스트 케이스</h3>
   <table>
     <tr><th>케이스</th><th>파라미터</th><th>결과</th></tr>
-    <tr><td>1</td><td>원 10개, 반지름 ≤50</td><td>그룹 2개, 겹침 5개</td></tr>
-    <tr><td>2</td><td>폴리곤 20개, 면 수 ≤8</td><td>그룹 4개, 겹침 10개</td></tr>
-    <tr><td>3</td><td>혼합 50개, 면 수 ≤12</td><td>그룹 6개, 겹침 18개</td></tr>
+    <tr><td>1</td><td>도형 50개, 반지름 ≤50</td><td>그룹 7개, 겹침 16개</td></tr>
+    <tr><td>2</td><td>도형 10개, 반지름 ≤50</td><td>그룹 1개, 겹침 2개</td></tr>
   </table>
   <h3>기능 시연</h3>
-  <img src="assets/screenshot1.png" alt="실행화면 1">
-  <img src="assets/screenshot2.png" alt="실행화면 2">
+  <img src="assets/images/screenshot1.png" alt="실행화면 1">
+  <img src="assets/imagess/screenshot2.png" alt="실행화면 2">
   <h3>성능 최적화</h3>
   <ul class="tech-list">
     <li>requestAnimationFrame으로 렌더링 최적화</li>
