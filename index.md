@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shape Overlaps Detection System Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 400;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       background: #F2F2F7;
@@ -99,7 +101,7 @@ Client (Browser) ←→ HTTP/REST ←→ ShapeController (Spring Boot)
                           (SAT, Convex Hull,
                            Union-Find)
   </pre>
-  <img src="assets/architecture_pretty.png" alt="시스템 아키텍처 다이어그램">
+  <img src="assets/architecture.png" alt="시스템 아키텍처 다이어그램">
 </section>
 
 <section id="tech-analysis">
@@ -155,6 +157,7 @@ Client (Browser) ←→ HTTP/REST ←→ ShapeController (Spring Boot)
     <li>ShapeService: 도형 생성, Bounding Box 및 SAT 충돌 감지, Union-Find 그룹화</li>
     <li>AlgorithmUtils: separatingAxisTest(), computeConvexHull(), find(), union()</li>
     <li>ShapeVisualizer (JS): generateShapes(), drawShapesSVG(), updateSvgSize(), toggleJsonModal(), updateStats()</li>
+    <li>Typography: Google Fonts의 'Inter' 폰트 및 애플 시스템 폰트(-apple-system, BlinkMacSystemFont) 적용하여 깔끔한 글꼴 스타일 구현</li>
   </ul>
   <h3>JSON 데이터 구조</h3>
   <pre><code>{
