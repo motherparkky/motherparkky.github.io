@@ -87,7 +87,7 @@
   </ul>
   <h3>기술 스택</h3>
   <ul class="tech-list">
-    <li><strong>Backend:</strong> Java 17, Spring Boot, Maven, Spring Web, Spring Data JPA, Lombok</li>
+    <li><strong>Backend:</strong> Java 17, Spring Boot, Maven, Spring Web, Spring Data JPA, Lombok</li>
     <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6), SVG, Jekyll</li>
     <li><strong>배포:</strong> GitHub Pages (Jekyll 기반), GitHub Actions (CI/CD)</li>
   </ul>
@@ -101,7 +101,7 @@ Client (Browser) ←→ HTTP/REST ←→ ShapeController (Spring Boot)
                           (SAT, Convex Hull,
                            Union-Find)
   </pre>
-  <img src="assets/architecture.png" alt="시스템 아키텍처 다이어그램">
+  <img src="assets/imagges/architecture.png" alt="시스템 아키텍처 다이어그램">
 </section>
 
 <section id="tech-analysis">
@@ -109,7 +109,7 @@ Client (Browser) ←→ HTTP/REST ←→ ShapeController (Spring Boot)
   <h3>Spring Boot 구조 및 설계</h3>
   <ul class="tech-list">
     <li><strong>프로젝트 구조:</strong> src/main/java에 controller, service, repository, domain 패키지 배치</li>
-    <li><strong>의존성 관리:</strong> Maven pom.xml에 Spring Web, Spring Data JPA, Lombok 설정</li>
+    <li><strong>의존성 관리:</strong> Maven pom.xml에 Spring Web, Spring Data JPA, Lombok 설정</li>
     <li><strong>설계 패턴:</strong> Controller-Service-Repository 계층 분리</li>
   </ul>
   <h3>REST API 설계 원칙</h3>
@@ -129,20 +129,20 @@ Client (Browser) ←→ HTTP/REST ←→ ShapeController (Spring Boot)
 
 <section id="algorithms">
   <h2>3. 알고리즘 상세</h2>
-  <h3>예비 필터링: Bounding Box</h3>
+  <h3>예비 필터링: Bounding Box</h3>
   <p>각 도형의 바운딩 박스(Bounding Box)를 먼저 비교하여 빠른 예비 검사 수행</p>
-  <h3>SAT (Separating Axis Theorem)</h3>
+  <h3>SAT (Separating Axis Theorem)</h3>
   <ol class="algo-list">
     <li>두 도형의 모든 엣지에 수직인 축(axis) 계산</li>
     <li>각 도형의 정점을 해당 축에 투영(projection)</li>
     <li>투영 구간이 분리되어 있으면 충돌 없음</li>
     <li>모든 축에서 겹치면 충돌 판정</li>
   </ol>
-  <h3>컨벡스 헐 (Convex Hull)</h3>
+  <h3>컨벡스 헐 (Convex Hull)</h3>
   <ul class="tech-list">
-    <li>Graham Scan: 점 집합 정렬 후 스택 방식으로 볼록 껍질 계산 (O(n log n))</li>
+    <li>Graham Scan: 점 집합 정렬 후 스택 방식으로 볼록 껍질 계산 (O(n log n))</li>
   </ul>
-  <h3>연쇄적 그룹화 (Union-Find)</h3>
+  <h3>연쇄적 그룹화 (Union-Find)</h3>
   <ul class="tech-list">
     <li>겹침 관계를 간선(edge)으로 보고 Union-Find 구조로 그룹화</li>
     <li>find()와 union() 연산을 통해 연결 컴포넌트 식별 (α(n) 복잡도)</li>
@@ -157,7 +157,6 @@ Client (Browser) ←→ HTTP/REST ←→ ShapeController (Spring Boot)
     <li>ShapeService: 도형 생성, Bounding Box 및 SAT 충돌 감지, Union-Find 그룹화</li>
     <li>AlgorithmUtils: separatingAxisTest(), computeConvexHull(), find(), union()</li>
     <li>ShapeVisualizer (JS): generateShapes(), drawShapesSVG(), updateSvgSize(), toggleJsonModal(), updateStats()</li>
-    <li>Typography: Google Fonts의 'Inter' 폰트 및 애플 시스템 폰트(-apple-system, BlinkMacSystemFont) 적용하여 깔끔한 글꼴 스타일 구현</li>
   </ul>
   <h3>JSON 데이터 구조</h3>
   <pre><code>{
@@ -195,7 +194,7 @@ Client (Browser) ←→ HTTP/REST ←→ ShapeController (Spring Boot)
   <h3>성능 최적화</h3>
   <ul class="tech-list">
     <li>requestAnimationFrame으로 렌더링 최적화</li>
-    <li>Bounding Box 예비 검사로 SAT 호출 수 절감</li>
+    <li>Bounding Box 예비 검사로 SAT 호출 횟수 절감</li>
     <li>JSON 응답 압축 및 크기 최소화</li>
   </ul>
 </section>
